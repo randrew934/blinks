@@ -52,7 +52,7 @@ import {
       return new Response(
         JSON.stringify({
           error: {
-            message: "Invalid account" + error,
+            message: "Invalid account",
           },
         }),
         {
@@ -67,7 +67,7 @@ import {
     const transaction = new Transaction().add(
       SystemProgram.transfer({
         fromPubkey: sender, // Sender public key
-        toPubkey: new PublicKey(""), // Replace with your recipient public key
+        toPubkey: new PublicKey("AbVh32GTzzBuUYQEgZ2LjpX17StgxN5aPzqaYaxbLvB4"), // Replace with your recipient public key
         lamports: amount * LAMPORTS_PER_SOL,
       })
     );
