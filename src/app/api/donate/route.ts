@@ -52,7 +52,7 @@ import {
       return new Response(
         JSON.stringify({
           error: {
-            message: "Invalid account",
+            message: "Invalid account" + error,
           },
         }),
         {
