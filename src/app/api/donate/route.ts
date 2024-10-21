@@ -14,6 +14,9 @@ import {
   clusterApiUrl,
 } from "@solana/web3.js";
 
+// create the standard headers for this route (including CORS)
+const headers = createActionHeaders();
+
 // GET request handler
 export async function GET(request: Request) {
   const url = new URL(request.url);
@@ -33,13 +36,13 @@ export async function GET(request: Request) {
     },
   };
   return new Response(JSON.stringify(payload), {
-    headers: createActionHeaders(),
+    headers
   });
 }
 
 // DO NOT FORGET TO INCLUDE THE `OPTIONS` HTTP METHOD
 // THIS WILL ENSURE CORS WORKS FOR BLINKS
-export const OPTIONS = async () => Response.json(null, createActionHeaders());
+export const OPTIONS = async () => Response.json(null, { headers });
 
 // POST request handler
 export async function POST(request: Request) {
@@ -59,7 +62,7 @@ export async function POST(request: Request) {
       }),
       {
         status: 400,
-        headers: createActionHeaders(),
+        headers,
       }
     );
   }
@@ -89,6 +92,6 @@ export async function POST(request: Request) {
     },
   });
   return new Response(JSON.stringify(payload), {
-    headers: createActionHeaders(),
+    headers,
   });
 }
