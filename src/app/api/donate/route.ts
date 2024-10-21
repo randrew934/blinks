@@ -21,9 +21,9 @@ const headers = createActionHeaders();
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const payload: ActionGetResponse = {
-    icon: "/images/icon.png", // Local icon path
-    title: "Donate to Rahul",
-    description: "Support Rahul by donating SOL.",
+    icon: "https://opengraph.b-cdn.net/production/images/c1717d90-8f85-4be3-b2e3-c1a69ce5ba8e.jpg?token=ohoLEhUik6X74fqi5dsd0M3r3V7eJYzeXs_t-gRPma8&height=1080&width=810&expires=33265514795", // Local icon path
+    title: "Donate to Ral Andrew",
+    description: "Support Ral Andrew by donating SOL.",
     label: "Donate",
     links: {
       actions: [
