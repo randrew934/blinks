@@ -4,6 +4,7 @@ import {
     ActionPostRequest,
     ActionPostResponse,
     createPostResponse,
+    createActionHeaders
   } from "@solana/actions";
   import {
     Connection,
@@ -33,7 +34,7 @@ import {
       },
     };
     return new Response(JSON.stringify(payload), {
-      headers: ACTIONS_CORS_HEADERS,
+      headers: createActionHeaders(),
     });
   }
   
@@ -57,7 +58,7 @@ import {
         }),
         {
           status: 400,
-          headers: ACTIONS_CORS_HEADERS,
+          headers: createActionHeaders(),
         }
       );
     }
@@ -83,6 +84,6 @@ import {
       },
     });
     return new Response(JSON.stringify(payload), {
-      headers: ACTIONS_CORS_HEADERS,
+      headers: createActionHeaders(),
     });
   }
