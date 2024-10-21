@@ -1,4 +1,4 @@
-import { ACTIONS_CORS_HEADERS, ActionsJson } from "@solana/actions";
+import { createActionHeaders, type ActionsJson } from "@solana/actions";
 
 export const GET = async () => {
   const payload: ActionsJson = {
@@ -11,8 +11,8 @@ export const GET = async () => {
     ],
   };
 
-  return new Response(JSON.stringify(payload), {
-    headers: ACTIONS_CORS_HEADERS,
+  return Response.json(payload, {
+    headers: createActionHeaders(),
   });
 };
 
