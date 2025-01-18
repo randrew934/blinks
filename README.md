@@ -1,4 +1,4 @@
-<h1>Solana Blinks by Ral Andrew</h2>
+<h1>Solana Blinks</h2>
 
 ## What are Blinks?
 
